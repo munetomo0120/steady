@@ -1,3 +1,359 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-image: url("background.jpg");
+}
+
+.Wrapper {
+  height: 100vh;
+  width: 100vw;
+  // background-color: lightcoral;
+  // ヘッダー部分
+  .Header {
+    height: 50px;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    .Left {
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      &__btn {
+        height: 100%;
+        width: 150px;
+        background-color: lightseagreen;
+        text-align: center;
+        line-height: 50px;
+      }
+    }
+    .Right {
+      width: 100%;
+      height: 100%;
+      background-color: lightsalmon;
+      display: flex;
+      justify-content: flex-end;
+      &__btn {
+        height: 100%;
+        width: 150px;
+        background-color: lightseagreen;
+        text-align: center;
+        line-height: 50px;
+      }
+    }
+  }
+  // メイン部分
+  .Main {
+    height: calc(100% - 100px);
+    background-color: lightcyan;
+    display: flex;
+    // サイドバー部分
+    .Left {
+      width: 25vw;
+      background-color: lightgray;
+      .Top_content {
+        height: 190px;
+        width: 100%;
+        background-color: lightcoral;
+        display: flex;
+        padding: 20px;
+        .Image {
+          height: 150px;
+          width: 150px;
+          background-color: blue;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+        .Profile {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+      .Bottom_content {
+        height: calc(100% - 190px);
+        width: 100%;
+        background-color: lightyellow;
+        padding: 20px;
+        &__placename {
+          margin-bottom: 20px;
+        }
+        &__placemap {
+          height: calc(100% - 50px);
+          width: 100%;
+          background-color: green;
+        }
+      }
+    }
+    // 投稿部分
+    .Center {
+      width: 50vw;
+      background-color: lightgreen;
+      overflow: scroll;
+      .Content {
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+        background-color: lightblue;
+        .Left {
+          width: 50px;
+          .Image {
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+            border-radius: 50%;
+          }
+        }
+        .Right {
+          width: 100%;
+          background-color: lightsalmon;
+          padding: 0 20px;
+          .Top {
+            display: flex;
+            margin-bottom: 20px;
+            &__name {
+              width: 20%;
+              margin-right: 20px;
+              background-color: lightgoldenrodyellow;
+            }
+            &__like_btn {
+              width: 5%;
+              background-color: lightcyan;
+            }
+            &__show_btn {
+              width: 5%;
+              background-color: lightyellow;
+            }
+            &__date {
+              background-color: lightgrey;
+            }
+          }
+          .Middle {
+            background-color: lightpink;
+            .Text {
+              background-color: lightgoldenrodyellow;
+            }
+          }
+          .Bottom {
+            width: 100%;
+            height: 400px;
+            background-color: lightseagreen;
+            .Image {
+              width: 100%;
+              height: 400px;
+              background-color: aquamarine;
+            }
+          }
+        }
+      }
+    }
+    // 右側サイドバー
+    .Right {
+      width: 25vw;
+      padding: 20px;
+      background-color: lightpink;
+      .Top_content {
+        height: 40px;
+        text-align: center;
+        background-color: bisque;
+      }
+      .Middle_content {
+        height: calc(100% - 80px);
+        background-color: burlywood;
+        .First {
+          height: 20%;
+          background-color: darkkhaki;
+          display: flex;
+          
+          padding: 20px 0;
+          &__rank {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+          &__name {
+            height: 100%;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+          }
+          &__show_member_btn {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+        }
+        .Second {
+          height: 20%;
+          background-color: darkkhaki;
+          display: flex;
+          
+          padding: 20px 0;
+          &__rank {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+          &__name {
+            height: 100%;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+          }
+          &__show_member_btn {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+        }
+        .Third {
+          height: 20%;
+          background-color: darkkhaki;
+          display: flex;
+          
+          padding: 20px 0;
+          &__rank {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+          &__name {
+            height: 100%;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+          }
+          &__show_member_btn {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+        }
+        .Fourth {
+          height: 20%;
+          background-color: darkkhaki;
+          display: flex;
+          
+          padding: 20px 0;
+          &__rank {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+          &__name {
+            height: 100%;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+          }
+          &__show_member_btn {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+        }
+        .Fifth {
+          height: 20%;
+          background-color: darkkhaki;
+          display: flex;
+          
+          padding: 20px 0;
+          &__rank {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+          &__name {
+            height: 100%;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+          }
+          &__show_member_btn {
+            height: 100%;
+            width: 15%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--icon {
+            }
+          }
+        }
+      }
+      .Bottom_content {
+        height: 40px;
+        background-color: darkcyan;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .User_search_btn {
+          width: 200px;
+          text-align: center;
+          background-color: darksalmon;
+        }
+      }
+    }
+  }
+  // フッター部分
+  .Footer {
+    height: 50px;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+  }
+}
