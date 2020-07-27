@@ -1,0 +1,37 @@
+%h1.display-4.text-primary
+  Tweet details
+%p
+  ツイートの詳細内容です。
+%table.table
+  %tr
+    %th
+      ID
+    %th
+      Name
+    %th
+      Text
+    %th
+      Image
+    %th
+      Created_at
+    %th{colspan: "2"}
+  %tr
+    %td{width: "35px"}
+      = @post.id
+    %td{width: "100px"}
+      = @post.name
+    %td{width: "200px"}
+      = @post.text
+    %td
+      = image_tag @post.image_url(:thumb) if @post.image.present?
+    %td
+      = @post.created_at.to_s(:datetime)
+    %td{width: "80px"}
+      = link_to edit_post_path(@post.id) do
+        編集
+    %td{witdh: "80px"}
+      = link_to post_path(@post.id), method: :delete, data: {confirm: "削除しますか？"} do
+        削除
+%p
+  = link_to "/posts/new" do
+    ※新しいTweetを入力 &gt;&gt;
