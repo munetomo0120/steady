@@ -22,7 +22,8 @@ class PostsController < ApplicationController
     post.update(post_params)
   end
   def show
-    
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order("created_at ASC")
   end
   
   private
