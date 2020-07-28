@@ -1,46 +1,9 @@
--# .Wrapper
--#   .Header.gradient
--#     .Left
--#       .Left__btn
--#         = link_to "/", class: "border_bottom_btn" do
--#           STEADY
--#     .Right
--#       .Right__btn
--#         = link_to new_post_path, class: "border_bottom_btn" do
--#           POST
--#       .Right__btn
--#         = link_to "#", class: "border_bottom_btn" do
--#           USER INFO
--#   .Main
--#     .Post_contents
--#       .Top
--#         = form_with(model: @post, local: true) do |f|
--#           %h3
--#             new post
--#           = f.text_field :name, placeholder: "Name"
--#           = f.text_area :text, placeholder: "text" ,rows: "8"
--#           = f.label :image, class: "send_image" do
--#             -# = icon('far', 'image', class: 'Form__icon')
--#             = f.file_field :image, class: "none"
--#           = f.submit "SEND"
-
--#   .Footer
--#     ©2020 STEADY
 %h1.display-4.text-primary
   New Tweet
 %p
   登録するTweetを入力してください
 = form_with(model: @post, local: true) do |f|
-  .form-group
-    = label_tag("name", "Name")
-    = f.text_field("name", {class: "form-control"})
-  .form-group
-    = label_tag("text", "Text")
-    = f.text_area("text", {rows: 5, class: "form-control"})
-  .form-group
-    = label_tag("image", "Image URL")
-    = f.file_field("image", {class: "form-control-file"})
-  = submit_tag("SEND", {class: "btn btn-primary"})
+  = render partial: "form", locals: { f: f }
 %p
   = link_to "/" do
     &lt;&lt;トップページに戻る

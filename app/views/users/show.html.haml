@@ -1,13 +1,13 @@
 %h1.display-4.text-primary
-  Tweet List
+  #{@name}'s Tweets
 %p
-  現在、登録されているデータの一覧です。
+  #{@name}さんの投稿一覧です。
 %table.table
   %tr
     %th
       ID
-    %th
-      Name
+    -# %th
+    -#   Name
     %th
       Text
     %th
@@ -19,9 +19,8 @@
     %tr
       %td{width: "35px"}
         = post.id
-      %td{width: "100px"}
-        = link_to "/users/#{post.user.id}" do
-          = post.user.name
+      -# %td{width: "100px"}
+      -#   = post.user.name
       %td{width: "200px"}
         = link_to "/posts/#{post.id}" do
           = post.text
