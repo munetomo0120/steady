@@ -2,6 +2,10 @@
   Tweet List
 %p
   現在、登録されているデータの一覧です。
+%nav.navbar.navbar-light.bg-light
+  = form_with(url: search_posts_path, local: true, method: :get, class: "form-inline") do |f|
+    = f.text_field("keyword", {placeholder: "Keyword", class: "form-control mr-sm-2"})
+    = submit_tag("Search", {class: "btn btn-outline-primary my-2 my-sm-0"})
 %table.table
   %tr
     %th
