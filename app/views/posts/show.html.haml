@@ -36,14 +36,14 @@
 - if current_user
   %p
     コメントを入力してください
-  = form_with(model: [@post, @comment], local: true) do |f|
+  = form_with(model: [@post, @comment], local: true, id: "new_comment") do |f|
     .form-group
       = label_tag("text", "Comment")
-      = f.text_area("text", {rows: 2, class: "form-control"})
+      = f.text_area("text", {rows: 2, class: "form-control textbox"})
     .form-group
       = label_tag("image", "Image URL")
-      = f.file_field("image", {class: "form-control-file"})
-    = submit_tag("SEND", {class: "btn btn-primary"})
+      = f.file_field("image", {class: "form-control-file imagebox"})
+    = submit_tag("SEND", {class: "btn btn-primary form__submit"})
 - else
   %p
     >>コメントする場合はログインしてください
