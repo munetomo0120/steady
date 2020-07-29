@@ -14,6 +14,26 @@
     %header
       %h3.display-4
         STEADY
+      - if user_signed_in?
+        %p
+          username: #{current_user.name}
+          %br/
+          = link_to root_path do
+            ホーム
+          = link_to "/users/#{current_user.id}" do
+            マイページ
+          = link_to destroy_user_session_path, method: :delete do
+            ログアウト
+          = link_to new_post_path do
+            投稿する
+      - else
+        %p
+          = link_to root_path do
+            ホーム
+          = link_to new_user_session_path do
+            ログイン
+          = link_to new_user_registration_path do
+            新規登録
       = yield
     %footer
       %p
