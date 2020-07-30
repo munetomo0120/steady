@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order("created_at ASC")
+    @like = Like.new
   end
   def search
     @posts = Post.search(params[:keyword])

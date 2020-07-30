@@ -26,6 +26,9 @@
       %td{width: "100px"}
         = link_to "/users/#{post.user.id}" do
           = post.user.name
+        %br/
+        = icon('far', 'heart', class: "text-danger")
+        #{post.liked_users.count}
       %td{width: "200px"}
         = link_to "/posts/#{post.id}" do
           = post.text

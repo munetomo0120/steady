@@ -35,6 +35,40 @@
         %td{witdh: "80px"}
           = link_to post_path(post.id), method: :delete, data: {confirm: "削除しますか？"} do
             削除
+
+%h3
+  いいねしている投稿
+%table.table
+  %tr
+    %th
+      ID
+    %th
+      Name
+    %th
+      Text
+    %th
+      Image
+    %th
+      Created_at
+    %th{colspan: "2"}
+  - @user.liked_posts.each do |post|
+    %tr
+      %td{width: "35px"}
+        = post.id
+      %td{width: "100px"}
+        = link_to "/users/#{post.user.id}" do
+          = post.user.name
+        %br/
+        = icon('far', 'heart', class: "text-danger")
+        #{post.liked_users.count}
+      %td{width: "200px"}
+        = link_to "/posts/#{post.id}" do
+          = post.text
+      %td
+        = image_tag post.image_url(:thumb) if post.image.present?
+      %td
+        = post.created_at.to_s(:datetime)
+
 %p
   = link_to "#" do
     ※ページの上部へ戻る &gt;&gt;
