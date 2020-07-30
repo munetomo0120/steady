@@ -12,9 +12,11 @@
     = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     
   %body.container.wrapper
+
     %header
       %h3.display-4
         STEADY
+      = render 'layouts/notifications'
       - if user_signed_in?
         %p
           username: #{current_user.name}
